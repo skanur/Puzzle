@@ -1,5 +1,6 @@
 #include <vector>
 #include <string>
+#include <cstdio>
 
 #ifdef __WIN32
 	#include <windows.h>

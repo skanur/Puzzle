@@ -1,8 +1,11 @@
 #ifndef __PUZZLE_P_H__
 #define __PUZZLE_P_H__ 1
 
-#include <math.h>
-//#include <mathimf.h>
+#ifdef __GNUC__
+    #include <math.h>
+#else
+    #include <mathimf.h>
+#endif
 #include <gd.h>
 
 typedef struct PuzzleView_ {
