@@ -1,1 +1,7 @@
 build/**
+
+# Ignore pictures
+small_picture_set/**
+**.jpg
+**.png
+**.txt
