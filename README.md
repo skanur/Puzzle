@@ -4,19 +4,13 @@
 
 If you are new to using git for collaborative projects, go through this [5 minute read](https://guides.github.com/introduction/flow/) to understand how to use github in team. 
 
+More detailed guide on [git](https://www.codeschool.com/courses/git-real).
+
 *Tip:* Assign one team member in-charge of merging the code to the master branch and tagging the versions according to the milestones. 
 
 ## Getting Started
 
-1. The starting point of this project is the github repository you got from the instructions from Moodle. Its in the form `Puzzle-yourgithubid`. For instance, my project would be called `Puzzle-skanur`.
-
-2. Open a terminal and clone the project into your local machine using `git clone`. Navigate into the project directory. I would clone my project as below. Your repository link will be different.
-    ```bash
-    git clone https://github.com/ESLab/Puzzle-skanur.git
-    cd Puzzle-skanur
-    ```
-
-4. Download the `Small Picture Set` from course webpage. Unzip it in your project directory. On my computer this creates a folder `small_picture_set` that has all the pictures I want to compare with.
+1. Clone your project and navigate to the project directory. Download `Small Picture Set` from Moodle and unzip in this directory.
 
 5. You can work on the project either using an IDE or using command line. The next setup instructions describe working with KDevelop IDE. If you know how to work with CMake projects, you can skip setting up IDE and work from the terminal and your favorite text editor.
 
@@ -37,6 +31,8 @@ If you are new to using git for collaborative projects, go through this [5 minut
 11. Similarly, you can create another executable configuration for `puzzlediff_cpp`. Just choose to add new `Application` after you click `Run-Configure Launches`. You can switch between any executable configurations by selecting `Run->Current Launch Configuration`. 
 
 12. You can change the arguments to your executables at any time by clicking `Run->Configure Launches` and editing your launch configuration.
+
+13. Every time you need to work on a different machine, you have to repeat the steps above.
 
 13. **WARNING**: This repo will be deleted after the exercise assessment without any prior notice. If you want a copy of it, fork it **privately**. Forking it publicly will automatically void your entire team!
 
