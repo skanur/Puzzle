@@ -1,6 +1,7 @@
 extern "C" {
   #include "puzzle_common.h"
   #include "puzzle.h"
+  #include "cilktime.h"
 }
 
 #include "pgetopt.hpp"
@@ -106,6 +107,7 @@ int main(int argc, char *argv[])
     PuzzleCvec cvec1, cvec2;
     double d;
     
+    unsigned long long start_ticks = cilk_getticks();
     puzzle_init_context(&context);    
     parse_opts(&opts, &context, argc, argv);
     puzzle_init_cvec(&context, &cvec1);
@@ -123,6 +125,8 @@ int main(int argc, char *argv[])
     puzzle_free_cvec(&context, &cvec1);
     puzzle_free_cvec(&context, &cvec2);
     puzzle_free_context(&context);
+    unsigned long long end_ticks = cilk_getticks();
+    printf("puzzlediff_cpp finished in %lf seconds\n", cilk_ticks_to_seconds(end_ticks - start_ticks));
     if (opts.exit == 0) {
         printf("%g\n", d);
         return 0;
