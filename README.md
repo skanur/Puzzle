@@ -6,7 +6,7 @@ If you are new to using git for collaborative projects, go through this [5 minut
 
 More detailed guide on [git](https://www.codeschool.com/courses/git-real).
 
-*Tip:* Assign one team member in-charge of merging the code to the master branch and tagging the versions according to the milestones. 
+*Tip:* If everyone pushes to master all the time, you'll soon run into serious problems with your repository. Instead assign one team member in-charge of merging the code to the master branch and tagging the versions according to the milestones. The rest of the members can submit their features through pull-requests.
 
 ## Getting Started
 
