@@ -77,9 +77,9 @@ puzzlediff_cpp small_picture_set/0_5mpix_boat.jpg small_picture_set
 
 ### Output
 
-The application should produce as its output a list of the file names of the **10 most similar pictures found, as well as a list of at most 10 pictures found to be identical or close resemblance to the reference picture**. The vector distance to the reference picture vector should be available in the output (and used to sort the lists). Pictures with a vector distances **shorter than or equal to 0.12** (to the reference image) should be placed in the identical/close resemblance list, sorted according to vector distance. Vector distances **longer than 0.12** are placed in the list of similar images and sorted according to vector distance. 
+The application should produce as its output a list of the file names of the **10 most similar pictures found, as well as a list of pictures found to be identical or close resemblance to the reference picture**. The vector distance to the reference picture vector should be available in the output (and used to sort the lists). Pictures with a vector distances **shorter than or equal to 0.12** (to the reference image) should be placed in the identical/close resemblance list, sorted according to vector distance. Vector distances **longer than 0.12** are placed in the list of similar images and sorted according to vector distance. 
 
-**Don't list copies of pictures that are already in the top 10 list in either of the top 10 lists**
+**Don't list copies of pictures that are already in the top 10 list in either of the lists**
 
 Examples:
 
