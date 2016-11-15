@@ -72,9 +72,7 @@ The final application should have the input and output specs detailed below. You
 
 Examples:
 ```bash
-puzzlediff small_picture_set/0_5mpix_boat.jpg small_picture_set
-
-puzzlediff_cpp some_ref_pic.png ~/large_picture_set
+puzzlediff_cpp small_picture_set/0_5mpix_boat.jpg small_picture_set
 ```
 
 ### Output
