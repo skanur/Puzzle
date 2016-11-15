@@ -6,6 +6,13 @@ extern "C" {
 
 #include "pgetopt.hpp"
 
+// Utility function to read contents of the folder
+/* Example on how listDir could be called */
+//std::vector<std::string> fileNamesVector;
+//listDir(opts.file2, fileNamesVector);	/* opts.file2 holds the directory name */
+//std::cout << "Number of file names found in search directory: " << fileNamesVector.size << "\n\n";
+void listDir(const char* dirName, std::vector<std::string>& fnVec);
+
 typedef struct Opts_ {
     const char *file1;    
     const char *file2;
