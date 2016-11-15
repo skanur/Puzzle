@@ -36,11 +36,29 @@ More detailed guide on [git](https://www.codeschool.com/courses/git-real).
 
 13. **WARNING**: This repo will be deleted after the exercise assessment without any prior notice. If you want a copy of it, fork it **privately**. Forking it publicly will automatically void your entire team!
 
-## Using VTune-Amplifier
+## Profiling the application
+
+Many tools are available for profiling sequential application and this readme will cover profiling using Valgrind/Callgrind. You can always use a different tool to achieve the same goal. Profiling the application gives us an opportunity to note the areas that benefit from optimizations. In addition you can also generate Callgraphs that indicate the program flow.
+
+To profile an application, first build the application using the above steps. If you have followed the above steps, the C and C++ executables are present in the folder `build/puzzlediff/` and in `build/puzzlediff_cpp/` respectively. Profiling is carried out in two steps.
+1. Open a terminal. This example assumes that you have your picture folder in the project folder.
+    ```bash
+    use parallelstudio
+    export CC=icc CXX=icpc
+    cd build
+    cmake .. && make
+    valgrind --tool=callgrind -v puzzlediff/puzzlediff ../small_picture_set/0_5mpix_car.jpg ../small_picture_set/20mpix_car.jpg
+    ```
+2. This will create a file `callgrind.out.$$$$`, where `$$$$` is some random number. Now open `kcachegrind` using this file
+    ```bash
+    kcachegrind callgrind.out.$$$$
+    ```
+
+The window that opens already has a side pane with function calls that took maximum amount of relative execution time, a center pane with tabs listing Callers, Source Code etc., and a bottom pane with Callgraphs for different functions. You can find more information about Kcachegrind [here](http://kcachegrind.sourceforge.net/html/Screenshots.html). Note that everytime you run step 1, you create a different file `callgrind.out.$$$$$`. So make sure you are supplying the right file in step 2.
 
 ## Input and Output Specifications
 
-The final application should have the following input and output specs
+The final application should have the input and output specs detailed below. You can use the `listdir.cpp` in the folder puzzlediff_cpp to read the folder contents. Unfortunately, it works only with the C++ project.
 
 ### Input
 `command file directory` where
