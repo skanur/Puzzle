@@ -39,7 +39,9 @@ More detailed guide on [git](https://www.codeschool.com/courses/git-real).
 Many tools are available for profiling sequential application and this readme will cover profiling using Valgrind/Callgrind. You can always use a different tool to achieve the same goal. Profiling the application gives us an opportunity to note the areas that benefit from optimizations. In addition you can also generate Callgraphs that indicate the program flow.
 
 To profile an application, first build the application using the above steps. If you have followed the above steps, the C++ executable is present in the folder `build/puzzlediff_cpp/`. Profiling is carried out in two steps.
+
 1. Open a terminal. This example assumes that you have your picture folder in the project folder.
+
     ```bash
     use parallelstudio
     export CC=icc CXX=icpc
@@ -47,7 +49,9 @@ To profile an application, first build the application using the above steps. If
     cmake .. && make
     valgrind --tool=callgrind -v puzzlediff_cpp/puzzlediff_cpp ../small_picture_set/0_5mpix_car.jpg ../small_picture_set/20mpix_car.jpg
     ```
+
 2. This will create a file `callgrind.out.$$$$`, where `$$$$` is some random number. Now open `kcachegrind` using this file
+
     ```bash
     kcachegrind callgrind.out.$$$$
     ```
