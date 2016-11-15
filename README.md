@@ -22,13 +22,11 @@ More detailed guide on [git](https://www.codeschool.com/courses/git-real).
 
 7. To create a project click `Project->Open/Import Project`. A dialogue opens. Open your project directory from the browse window, select `CMakeLists.txt` and click `Next`. The dialogue window gives the following info - Name: Puzzle, Build System: CMake Project Manager. Click `Finish`. In the configuration window, choose the defaults and click `OK`.
 
-8. Click on `Build` button to build the entire project. It creates two executables, one for C project `puzzlediff` and another for the C++ project `puzzlediff_cpp`. 
+8. Click on `Build` button to build the entire project. It creates an executable for the C++ project `puzzlediff_cpp`. 
 
-9. Let's create an executable configuration for `puzzlediff`. Click `Run->Configure Launches`. A dialogue opens. Right click on `New Application Launcher` and rename it to `puzzlediff_debug`. Under `Project Target`, choose `Puzzle/puzzlediff/puzzlediff`. Enter the arguments for the executable `small_picture_set/0_5mpix_boat.jpg small_picture_set/0_5mpix_tree.jpg`. You can change this to any picture of your choice. Choose the current project directory as your `Working Directory`. Under Dependencies, choose the action `Build`. Click `Apply` and `OK`. 
+9. Let's create an executable configuration for `puzzlediff_cpp`. Click `Run->Configure Launches`. A dialogue opens. Right click on `New Application Launcher` and rename it to `puzzlediff_cpp_debug`. Under `Project Target`, choose `Puzzle/puzzlediff_cpp/puzzlediff_cpp`. Enter the arguments for the executable `small_picture_set/0_5mpix_boat.jpg small_picture_set/0_5mpix_tree.jpg`. You can change this to any picture of your choice. Choose the current project directory as your `Working Directory`. Under Dependencies, choose the action `Build`. Click `Apply` and `OK`. 
 
 10. You can now click on `Execute` to run this configuration. Verify if the output from your console matches the value given in the document `Vector distances for all pictures in small picture set` on Moodle.
-
-11. Similarly, you can create another executable configuration for `puzzlediff_cpp`. Just choose to add new `Application` after you click `Run-Configure Launches`. You can switch between any executable configurations by selecting `Run->Current Launch Configuration`. 
 
 12. You can change the arguments to your executables at any time by clicking `Run->Configure Launches` and editing your launch configuration.
 
@@ -40,14 +38,14 @@ More detailed guide on [git](https://www.codeschool.com/courses/git-real).
 
 Many tools are available for profiling sequential application and this readme will cover profiling using Valgrind/Callgrind. You can always use a different tool to achieve the same goal. Profiling the application gives us an opportunity to note the areas that benefit from optimizations. In addition you can also generate Callgraphs that indicate the program flow.
 
-To profile an application, first build the application using the above steps. If you have followed the above steps, the C and C++ executables are present in the folder `build/puzzlediff/` and in `build/puzzlediff_cpp/` respectively. Profiling is carried out in two steps.
+To profile an application, first build the application using the above steps. If you have followed the above steps, the C++ executable is present in the folder `build/puzzlediff_cpp/`. Profiling is carried out in two steps.
 1. Open a terminal. This example assumes that you have your picture folder in the project folder.
     ```bash
     use parallelstudio
     export CC=icc CXX=icpc
     cd build
     cmake .. && make
-    valgrind --tool=callgrind -v puzzlediff/puzzlediff ../small_picture_set/0_5mpix_car.jpg ../small_picture_set/20mpix_car.jpg
+    valgrind --tool=callgrind -v puzzlediff_cpp/puzzlediff_cpp ../small_picture_set/0_5mpix_car.jpg ../small_picture_set/20mpix_car.jpg
     ```
 2. This will create a file `callgrind.out.$$$$`, where `$$$$` is some random number. Now open `kcachegrind` using this file
     ```bash
@@ -58,7 +56,7 @@ The window that opens already has a side pane with function calls that took maxi
 
 ## Input and Output Specifications
 
-The final application should have the input and output specs detailed below. You can use the `listdir.cpp` in the folder puzzlediff_cpp to read the folder contents. Unfortunately, it works only with the C++ project.
+The final application should have the input and output specs detailed below. You can use the `listdir.cpp` in the folder puzzlediff_cpp to read the folder contents.
 
 ### Input
 `command file directory` where
