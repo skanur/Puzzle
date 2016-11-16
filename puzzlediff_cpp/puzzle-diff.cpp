@@ -4,6 +4,9 @@ extern "C" {
   #include "cilktime.h"
 }
 
+#include <iostream>
+#include <vector>
+#include <string>
 #include "pgetopt.hpp"
 
 // Utility function to read contents of the folder
