@@ -60,11 +60,11 @@ void listDir(const char* dirName, std::vector<std::string>& fnVec)
             fnVec.push_back(std::string(ent->d_name));
         }
         closedir(dir);
-        // Remove files with name "." and ".." in linux filesystem
-        auto new_end = std::remove_if(fnVec.begin(), fnVec.end(), IsInvalidFile);
-
-        //Resize the vector
-        fnVec.erase(new_end, fnVec.end());
+        // Remove files with name "." and ".." in linux filesystem and resize vector
+        fnVec.erase(std::remove_if(fnVec.begin(),
+                                   fnVec.end(),
+                                   IsInvalidFile), 
+                    fnVec.end());
     }
     else {
         fprintf(stderr,"Could not open the directory %s\n", dirName);
