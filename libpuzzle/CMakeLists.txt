@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-set(SHARED_LIB_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/dependencies/ligd-include)
+set(SHARED_LIB_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/dependencies/libgd-include)
 set(SHARED_LIB_INCLUDE_DIR ${SHARED_LIB_INCLUDE_DIR} PARENT_SCOPE)
 
 if(TARGET shared_lib)

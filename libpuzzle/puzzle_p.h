@@ -6,7 +6,7 @@
 #else
     #include <mathimf.h>
 #endif
-#include <gd.h>
+#include "gd.h"
 
 typedef struct PuzzleView_ {
     unsigned int width;

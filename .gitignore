@@ -5,3 +5,7 @@ small_picture_set/**
 **.jpg
 **.png
 **.txt
+
+# Ignore vagrant files
+.vagrant
+Vagrantfile

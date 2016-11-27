@@ -10,17 +10,8 @@ include_directories(${SHARED_LIB_INCLUDE_DIR})
 link_directories(${CMAKE_SOURCE_DIR}/dependencies)
 link_directories(${CMAKE_SOURCE_DIR}/libpuzzle)
 
-find_library(libraries NAMES libgd.a libz.a jpeg.a libpng15_static.a HINTS ${CMAKE_SOURCE_DIR}/dependencies NO_DEFAULT_PATH)
+find_library(libraries NAMES libgd.so libz.a libjpeg.so.8 libwebp.so.6 libpng16.so.16 HINTS ${CMAKE_SOURCE_DIR}/dependencies NO_DEFAULT_PATH)
 set(libraries ${libraries} shared_lib)
-
-if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
-    set(MATH_LIB "")
-else()
-    set(MATH_LIB m)
-    set(${CMAKE_CXX_FLAGS} "${CMAKE_CXX_FLAGS} -fcilkplus")
-    set(${CMAKE_C_FLAGS} "${CMAKE_C_FLAGS} -fcilkplus")
-endif()
-
 
 add_executable(puzzlediff_cpp ${PUZZLEDIFF_CPP_SRC})
 target_link_libraries(puzzlediff_cpp ${libraries} ${MATH_LIB})
