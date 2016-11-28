@@ -113,3 +113,51 @@ The project requires delivering code at three different points of time. For more
 2. Milestone 3: Deliver the working parallel code according to the input/output specs for this milestone by first tagging it as `git tag -a mile3 - m "Milestone 3"` and pushing `git push --follow-tags origin master` . Deadline **Thursday 7.12 23:55**
 
 3. Final code: Deliver the final working code that was used on Xeon machine by first tagging it as `git tag -a final` and pushing `git push --follow-tags origin master`. 
+
+## Developing on your laptop
+
+We will use a VirtualBox image that consists of all the necessary tools for compiling the project. The image provided is only for convenience and does not replace running your project on the workstations of the lab.
+
+### Requirements
+
+Your machine should have a minimum of 2 GB of memory and a dual core CPU that supports hyper-threading and virtualisation. It is recommended to have a 4 GB of memory and a 4 core CPU. It is also recommended to have an Ethernet connection for faster installation.
+
+Install the following on your machine.
+
+1. [Vagrant](https://www.vagrantup.com/downloads.html)
+
+2. [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
+
+### Getting started
+
+1. Once you have installed Vagrant and Virtualbox according to your platform, open a terminal (`cmd` in Windows) and navigate to your project directory.
+
+2. Perform the following one time setup. This will take sometime based on your internet connection. Its is recommended to use an Ethernet connection for faster install.
+
+    ```bash
+    vagrant up skanur/manycore
+    ```
+### Development
+
+1. Once you have installed the box, you can start the Virtualbox with following commands. 
+
+    ```bash
+    vagrant up
+    vagrant ssh
+    cd /vagrant
+    ```
+
+2. Once you are in `/vagrant`, to compile, run
+
+    ```bash
+    ./compile_on_laptop.sh
+    ```
+
+3. To shutdown the Virtualbox, run
+
+    ```bash
+    exit
+    vagrant halt
+    ```
+
+4. You can then begin development again starting from step 1.
