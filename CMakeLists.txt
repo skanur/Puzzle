@@ -5,7 +5,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
     set(MATH_LIB "")
 else()
     add_compile_options("-fcilkplus")
-    set(MATH_LIB m)
+    find_library(MATH_LIB libm.so)
 endif()
 
 add_compile_options("-g")

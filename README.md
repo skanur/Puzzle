@@ -17,6 +17,7 @@ More detailed guide on [git](https://www.codeschool.com/courses/git-real).
 6. Open another terminal tab or window. Open KDevelop as
     ```bash
     use parallelstudio
+    export CC=icc CXX=icpc
     kdevelop &
     ```
 
@@ -135,7 +136,8 @@ Install the following on your machine.
 2. Perform the following one time setup. This will take sometime based on your internet connection. Its is recommended to use an Ethernet connection for faster install.
 
     ```bash
-    vagrant up skanur/manycore
+    vagrant init skanur/manycore
+    vagrant plugin install vagrant-vbguest
     ```
 ### Development
 
