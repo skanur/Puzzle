@@ -139,9 +139,10 @@ Install the following on your machine.
     vagrant init skanur/manycore
     vagrant plugin install vagrant-vbguest
     ```
+
 ### Development
 
-1. Once you have installed the box, you can start the Virtualbox with following commands. 
+1. Once you have installed the box, you can start the Virtualbox with following commands. On Windows, you might need to use a 3rd party client to SSH. The username and password for the container is `vagrant`.
 
     ```bash
     vagrant up
